@@ -44,6 +44,8 @@
                         <div class="w-75 btn-group" role="group">
                             <a asp-controller="Category" asp-action="Edit"
                                 asp-route-id="@cat.Id" class="btn btn-warning">Edit</a>
+                            <a asp-controller="Category" asp-action="Delete"
+                                asp-route-id="@cat.Id" class="btn btn-danger">Delete</a>
                         </div>
                     </td>
                 </tr>

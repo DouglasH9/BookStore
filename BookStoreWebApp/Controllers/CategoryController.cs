@@ -80,5 +80,21 @@ namespace BookStoreWebApp.Controllers
             }
             return View(cat);
         }
+
+        //Post
+        public IActionResult Delete(int? id)
+        {
+            var catFromDb = _db.Categories.FirstOrDefault<Category>(x => x.Id == id);
+
+            if (catFromDb is not null)
+            {
+                _db.Categories.Remove(catFromDb);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+                return NotFound();
+            //return View();
+        }
     }
 }
