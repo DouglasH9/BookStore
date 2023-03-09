@@ -42,6 +42,7 @@ namespace BookStoreWebApp.Controllers
             {
                 _db.Categories.Add(cat);
                 _db.SaveChanges();
+                TempData["success"] = "Category Created Successfully!";
                 return RedirectToAction("Index");
             }
             return View(cat);
@@ -76,6 +77,7 @@ namespace BookStoreWebApp.Controllers
             {
                 _db.Categories.Update(cat);
                 _db.SaveChanges();
+                TempData["success"] = "Category Edited Successfully!";
                 return RedirectToAction("Index");
             }
             return View(cat);
@@ -90,6 +92,7 @@ namespace BookStoreWebApp.Controllers
             {
                 _db.Categories.Remove(catFromDb);
                 _db.SaveChanges();
+                TempData["success"] = "Deleted Successfully!";
                 return RedirectToAction("Index");
             }
             else

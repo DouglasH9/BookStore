@@ -1,0 +1,31 @@
+﻿@page
+@model RazorPracticeWebApp.Pages.Categories.EditModel
+@{
+}
+
+<h1>Edit Page</h1>
+
+<form method="post">
+    <div class="border p-3 mt-4 mb-2">
+        <h2 class="text-primary pl-3">Create Category</h2>
+        <hr />
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Category.Name" class="d-block"></label>
+            <input asp-for="Category.Name" class="mb-3" />
+            <span asp-validation-for="Category.Name" class="text-danger d-flex"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.DisplayOrder" class="d-block"></label>
+            <input asp-for="Category.DisplayOrder" class="mb-3" />
+            <span asp-validation-for="Category.DisplayOrder" class="text-danger d-flex"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Submit Changes</button>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
