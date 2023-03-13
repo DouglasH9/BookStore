@@ -35,6 +35,7 @@ namespace RazorPracticeWebApp.Pages.Categories
             {
                 await _db.Categories.AddAsync(Category);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category successfully created.";
                 return RedirectToPage("Index");
             }
             return Page();

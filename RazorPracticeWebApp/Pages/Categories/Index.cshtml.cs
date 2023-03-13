@@ -23,5 +23,20 @@ namespace RazorPracticeWebApp.Pages.Categories
         {
             Categories = _db.Categories;
         }
+
+        public async Task<IActionResult> OnPostDelete(int id)
+        {
+            Category cat = _db.Categories.FirstOrDefault<Category>(x => x.Id == id);
+
+            if (cat is not null)
+            {
+                _db.Categories.Remove(cat);
+                await _db.SaveChangesAsync();
+                return RedirectToPage("Index");
+            }
+
+            Console.WriteLine("Nulllllllllll");
+            return Page();
+        }
     }
 }

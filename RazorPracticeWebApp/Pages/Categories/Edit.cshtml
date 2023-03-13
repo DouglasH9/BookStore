@@ -20,6 +20,7 @@
             <input asp-for="Category.DisplayOrder" class="mb-3" />
             <span asp-validation-for="Category.DisplayOrder" class="text-danger d-flex"></span>
         </div>
+        <input type="hidden" asp-for="Category.Id"/>
         <button type="submit" class="btn btn-primary" style="width:150px">Submit Changes</button>
     </div>
 </form>
